@@ -1,18 +1,20 @@
 Name: GOKUL SACHIN
+
 Roll no: 23004843
-# Experiment--02-Implementation-of-combinational-logic
-Implementation of combinational logic gates
- 
+
+# Experiment 02 Implementation of combinational logic
+
 ## AIM:
 To implement the given logic function verify its operation in Quartus using Verilog programming.
  F1= A’B’C’D’+AC’D’+B’CD’+A’BCD+BC’D 
 ## Equipments Required:
-## Hardware – PCs, Cyclone II , USB flasher
-## Software – Quartus prime
+ Hardware – PCs, Cyclone II , USB flasher
+ Software – Quartus prime
 
 
 ## Theory
 A combinational circuit is a circuit in which the output depends on the present combination of inputs. Combinational circuits are made up of logic gates. The output of each logic gate is determined by its logic function. Combinational circuits can be made using various logic gates, such as AND gates, OR gates, and NOT gates.
+
 ## Procedure
 1. Create a New Project:
    - Open Quartus and create a new project by selecting "File" > "New Project Wizard."
@@ -41,17 +43,34 @@ A combinational circuit is a circuit in which the output depends on the present 
 
 
 ## Program:
-![image](https://github.com/vksachin2018/Experiment--02-Implementation-of-combinational-logic-/assets/149366019/131c96ae-992e-4329-92c4-e852de0c93c1)
+module EXP2(A,B,C,D,F1);
+
+input A,B,C,D;
+
+output F1;
+
+wire x1,x2,x3,x4,x5;
+
+assign x1=(~A)&(~B)&(~C)&(~D);
+
+assign x2=(A)&(~C)&(~D);
+
+assign x3=(~B)&(C)&(~D);
+
+assign x4=(~A)&(B)&(C)&(D);
+
+assign x5=(B)&(~C)&(D);
+
+assign F1=x1|x2|x3|x4|x5;
+
+endmodule
 
 ## RTL realization
 ![image](https://github.com/vksachin2018/Experiment--02-Implementation-of-combinational-logic-/assets/149366019/7833ecbc-0018-490e-a8fd-70591ac97877)
+
 ## TRUTH TABLE:
 ![image](https://github.com/vksachin2018/Experiment--02-Implementation-of-combinational-logic-/assets/149366019/3cf0d24a-3c17-47d6-b190-95c81e604c92)
 
-
-
-## Output:
-## RTL
 ## Timing Diagram:
 ![image](https://github.com/vksachin2018/Experiment--02-Implementation-of-combinational-logic-/assets/149366019/7a59ac44-ad04-46f9-8554-2fca211c63a2)
 
